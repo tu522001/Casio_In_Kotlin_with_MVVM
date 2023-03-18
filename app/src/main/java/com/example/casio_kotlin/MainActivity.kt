@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -34,31 +35,59 @@ class MainActivity : AppCompatActivity() {
         mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
         buttonSum.setOnClickListener {
-            val number1 = number1.text.toString().toInt()
-            val number2 = number2.text.toString().toInt()
-            val sum = Number(number1,number2)
-            mainViewModel.calculateSum(sum)
+            val number1= number1.text.toString()
+            val number2 = number2.text.toString()
+
+            if (number1.isNullOrEmpty() && number2.isNullOrEmpty()) {
+                Toast.makeText(this, "nhập số vào", Toast.LENGTH_SHORT).show()
+            } else {
+                val number1 = number1.toInt()
+                val number2 = number2.toInt()
+                val sum = Number(number1,number2)
+                mainViewModel.calculateSum(sum)
+            }
         }
 
         buttonMinus.setOnClickListener {
-            val number1 = number1.text.toString().toInt()
-            val number2 = number2.text.toString().toInt()
-            val minus = Number(number1,number2)
-            mainViewModel.calculateSubtraction(minus)
+            val number1= number1.text.toString()
+            val number2 = number2.text.toString()
+
+            if (number1.isNullOrEmpty() && number2.isNullOrEmpty()) {
+                Toast.makeText(this, "nhập số vào", Toast.LENGTH_SHORT).show()
+            } else {
+                val number1 = number1.toInt()
+                val number2 = number2.toInt()
+                val minus = Number(number1,number2)
+                mainViewModel.calculateSubtraction(minus)
+            }
         }
 
         buttonMul.setOnClickListener {
-            val number1 = number1.text.toString().toInt()
-            val number2 = number2.text.toString().toInt()
-            val mul = Number(number1,number2)
-            mainViewModel.calculateMultiplication(mul)
+            val number1= number1.text.toString()
+            val number2 = number2.text.toString()
+
+            if (number1.isNullOrEmpty() && number2.isNullOrEmpty()) {
+                Toast.makeText(this, "nhập số vào", Toast.LENGTH_SHORT).show()
+            } else {
+                val number1 = number1.toInt()
+                val number2 = number2.toInt()
+                val mul = Number(number1,number2)
+                mainViewModel.calculateMultiplication(mul)
+            }
         }
 
         buttonDiv.setOnClickListener {
-            val number1 = number1.text.toString().toInt()
-            val number2 = number2.text.toString().toInt()
-            val div = Number(number1,number2)
-            mainViewModel.calculateDivistion(div)
+            val number1= number1.text.toString()
+            val number2 = number2.text.toString()
+
+            if (number1.isNullOrEmpty() && number2.isNullOrEmpty()) {
+                Toast.makeText(this, "nhập số vào", Toast.LENGTH_SHORT).show()
+            } else {
+                val number1 = number1.toInt()
+                val number2 = number2.toInt()
+                val div = Number(number1,number2)
+                mainViewModel.calculateDivistion(div)
+            }
         }
 
 
